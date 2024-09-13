@@ -14,7 +14,7 @@ export class Router {
 		this.#handleLinks
 	}
 	#handleLinks() {
-		document.addEventListener(event => {
+		document.addEventListener('click', event => {
 			const target = event.target.closest('a')
 
 			if (target) {
