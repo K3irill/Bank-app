@@ -11,7 +11,7 @@ export class Router {
 			this.#handleRouteChange()
 		})
 		this.#handleRouteChange()
-		this.#handleLinks
+		this.#handleLinks()
 	}
 	#handleLinks() {
 		document.addEventListener('click', event => {
