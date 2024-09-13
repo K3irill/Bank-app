@@ -4,7 +4,14 @@ export class Layout {
 		this.children = children
 	}
 	render() {
-		const headerHTML = '<header>header</header>'
+		const headerHTML = `<header>
+        Header
+        <nav>
+        <a href='/'>Home</a>
+        <a href='/about-us'>About-us</a>
+        <a href='/auth'>Auth</a>
+        </nav>
+        </header>`
 
 		return `
     ${headerHTML}
