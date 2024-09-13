@@ -2,17 +2,17 @@ import { Home } from '@/components/screens/home/home.component'
 import { Auth } from '@/components/screens/auth/auth.component'
 import { AboutUs } from '@/components/screens/about-us/about-us.component'
 
-export const ROUTS = [
+export const ROUTES = [
 	{
-		Path: '/',
+		path: '/',
 		component: Home
 	},
 	{
-		Path: '/auth',
+		path: '/auth',
 		component: Auth
 	},
 	{
-		Path: '/about-us',
+		path: '/about-us',
 		component: AboutUs
 	}
 ]
