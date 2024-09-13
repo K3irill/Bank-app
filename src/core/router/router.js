@@ -7,6 +7,9 @@ export class Router {
 	#currentRout = null
 	#layout = null
 	constructor() {
+        window.addEventListener('popstate', () => {
+			this.#handleRouteChange()
+		})
 		this.#handleRouteChange()
 		this.#handleLinks
 	}
