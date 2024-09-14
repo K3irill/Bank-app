@@ -1,10 +1,16 @@
-import template from '@/components/screens/home/home-template.html'
 import ChildComponent from '../component/child.component'
 
 class RenderService {
+	/**
+	 * @param {string} html
+	 * @param {Array} components
+	 * @param {Object} [styles]
+	 * @returns {HTMLElement}
+	 */
 	htmlToElement(html, components = [], styles) {
 		const template = document.createElement('template')
 		template.innerHTML = html.trim()
+
 		const element = template.content.firstChild
 
 		if (styles) {
@@ -15,22 +21,29 @@ class RenderService {
 
 		return element
 	}
+
+	/**
+	 * @param {HTMLElement} parentElement
+	 * @param {Array} components
+	 */
 	#replaceComponentTags(parentElement, components) {
 		const componentTagPattern = /^component-/
 		const allElements = parentElement.getElementsByTagName('*')
 
 		for (const element of allElements) {
 			const elementTagName = element.tagName.toLowerCase()
-			if (componentTagPattern.test(element.tagName.toLowerCase())) {
+			if (componentTagPattern.test(elementTagName)) {
 				const componentName = elementTagName
-					.toLowerCase()
 					.replace(componentTagPattern, '')
 					.replace(/-/g, '')
+
 				const foundComponent = components.find(Component => {
 					const instance =
 						Component instanceof ChildComponent ? Component : new Component()
+
 					return instance.constructor.name.toLowerCase() === componentName
 				})
+
 				if (foundComponent) {
 					const componentContent =
 						foundComponent instanceof ChildComponent
@@ -46,6 +59,11 @@ class RenderService {
 		}
 	}
 
+	/**
+	 * @param {Object} moduleStyles
+	 * @param {string} element
+	 * @returns {void}
+	 */
 	#applyModuleStyles(moduleStyles, element) {
 		if (!element) return
 
@@ -57,6 +75,7 @@ class RenderService {
 				}
 			}
 		}
+
 		if (element.getAttribute('class')) {
 			applyStyles(element)
 		}
@@ -65,4 +84,14 @@ class RenderService {
 		elements.forEach(applyStyles)
 	}
 }
+
 export default new RenderService()
+
+{
+	/* <div class='home'>
+	<h1 class='text'></h1>
+	<component-heading></component-heading>
+	<component-card-info></component-card-info>
+</div>
+ */
+}

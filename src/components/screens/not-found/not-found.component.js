@@ -1,10 +1,10 @@
-import { BaseScreen } from '../../../core/component/base-screen.component'
+import { BaseScreen } from '@/core/component/base-screen.component'
 
 export class NotFound extends BaseScreen {
 	constructor() {
-		super({ title: 'Not found' })
+		super({ title: 'Not Found' })
 	}
 	render() {
-		return '<p>Not-found page</p>'
+		return '<p>Not found!</p>'
 	}
 }

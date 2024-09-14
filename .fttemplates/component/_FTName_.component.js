@@ -6,7 +6,8 @@ import template from './<FTName>.template.html'
 
 export class <FTName | pascalcase> extends ChildComponent {
 	render() {
-		this.element = renderService.htmlToElement(template, [], styles)
-		return this.element
+		this.element = renderService.htmlToElement(template, [], styles);
+		
+		return this.element;
 	}
 }

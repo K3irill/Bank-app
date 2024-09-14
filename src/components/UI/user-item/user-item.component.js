@@ -1,15 +1,12 @@
 import ChildComponent from '@/core/component/child.component'
 import renderService from '@/core/services/render.service'
 
-import styles from './header.module.scss'
-console.log(styles);
+import styles from './user-item.module.scss'
+import template from './user-item.template.html'
 
-import template from './header.template.html'
-
-export class Header extends ChildComponent {
+export class UserItem extends ChildComponent {
 	render() {
 		this.element = renderService.htmlToElement(template, [], styles)
-
 		return this.element
 	}
 }
