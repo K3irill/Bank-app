@@ -11,6 +11,7 @@ export class Home extends BaseScreen {
 	}
 	render() {
 		const element = renderService.htmlToElement(template, [], styles)
-		$R(element).find('h1').css('color', 'purple').append(element)
+		$R(element).find('h1').css('color', 'purple')
+		return element
 	}
 }
