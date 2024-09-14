@@ -2,8 +2,6 @@ import ChildComponent from '@/core/component/child.component'
 import renderService from '@/core/services/render.service'
 
 import styles from './header.module.scss'
-console.log(styles);
-
 import template from './header.template.html'
 
 export class Header extends ChildComponent {

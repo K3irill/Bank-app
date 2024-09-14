@@ -6,7 +6,8 @@ import template from './user-item.template.html'
 
 export class UserItem extends ChildComponent {
 	render() {
-		this.element = renderService.htmlToElement(template, [], styles)
-		return this.element
+		this.element = renderService.htmlToElement(template, [], styles);
+		
+		return this.element;
 	}
 }
