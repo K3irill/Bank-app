@@ -1,2 +1,16 @@
+@import 'src/styles/_variables.scss';
+@import 'src/styles/_mixins.scss';
+
 .user-item {
+    @include flex-horizontal-center;
+    background-color: $bg-block;
+    padding: 10px 15px;
+    border-radius: 15px;
+    &__ava-wrap{
+        @include flex-horizontal-center;
+        background-color: rgb(168, 169, 171);
+        padding: 5px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
 }
