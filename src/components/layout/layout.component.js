@@ -6,7 +6,6 @@ import styles from './layout.module.scss'
 import template from './layout.template.html'
 
 import { Header } from './header/header.component'
-import { UserItem } from '../UI/user-item/user-item.component'
 
 export class Layout extends ChildComponent {
 	constructor({ router, children }) {
@@ -25,8 +24,6 @@ export class Layout extends ChildComponent {
 		contentContainer.append(this.children)
 
 		mainElement.before(new Header().render()).append(contentContainer.element)
-
-		const headerElement = $R(this.element).find('header').append(new UserItem().render())
 
 		return this.element
 	}
